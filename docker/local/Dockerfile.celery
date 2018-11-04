@@ -1,0 +1,6 @@
+FROM python:3.6
+ADD ./main/ /app/
+WORKDIR /app/
+RUN useradd -ms /bin/bash celery-user
+RUN pip install celery
+ENTRYPOINT celery -A main worker --concurrency=20 --loglevel=DEBUG --uid=celery-user

@@ -1,11 +1,8 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
-
 [packages]
-
 django = "*"
 gunicorn = "*"
 "psycopg2" = "*"
@@ -13,10 +10,9 @@ django-environ = "*"
 gevent = "*"
 whitenoise = "*"
 raven = "*"
-
+celery = "*"
 
 [dev-packages]
-
 werkzeug = "*"
 django-debug-toolbar = "*"
 ipdb = "*"

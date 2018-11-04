@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 from main.models import Visits
+from main.tasks import forty_print_task
 
 
 def home(request):
     template_name = 'main/home.html'
     context = {}
+
+    forty_print_task.delay()
 
     try:
         c = Visits.objects.get(pk=1)
